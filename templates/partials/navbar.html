@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="blue">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="margin-left: 1vw;" href="/"><b>Movie Library </b></a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <div hx-get="/update" hx-target="#response-div-update" hx-on::after-request="location.reload();" style="color: grey"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+              fill="currentColor" class="bi bi-bootstrap-reboot" viewBox="0 0 16 16" style="cursor: pointer;">
+              <path
+                d="M1.161 8a6.84 6.84 0 1 0 6.842-6.84.58.58 0 1 1 0-1.16 8 8 0 1 1-6.556 3.412l-.663-.577a.58.58 0 0 1 .227-.997l2.52-.69a.58.58 0 0 1 .728.633l-.332 2.592a.58.58 0 0 1-.956.364l-.643-.56A6.8 6.8 0 0 0 1.16 8z" />
+              <path
+                d="M6.641 11.671V8.843h1.57l1.498 2.828h1.314L9.377 8.665c.897-.3 1.427-1.106 1.427-2.1 0-1.37-.943-2.246-2.456-2.246H5.5v7.352zm0-3.75V5.277h1.57c.881 0 1.416.499 1.416 1.32 0 .84-.504 1.324-1.386 1.324z" />
+            </svg></div>
+        </li>
+      </ul>
+
+
+      <form class="d-flex my-2" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" class="form-control"
+          id="myInput" type="search" placeholder="Search" aria-label="Search" onkeyup="search()">
+      </form>
+      
+    </div>
+</nav>

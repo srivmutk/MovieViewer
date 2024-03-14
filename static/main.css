@@ -1,0 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+.card-img-top {
+    width: 100%;
+    object-fit: cover;
+}

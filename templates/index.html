@@ -1,0 +1,11 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block content %}
+  <div id="response-div-watch" style="display: none;"></div>
+  <div id="response-div-update" style="display: none;"></div>
+  {% with movie_data=data %}
+    {% include "partials/movie_cards.html" %}
+  {% endwith %}
+{% endblock %}

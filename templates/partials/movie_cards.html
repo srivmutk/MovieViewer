@@ -1,0 +1,31 @@
+<div id="movie-cards" class="row row-cols-1 row-cols-md-2 gx-5"
+  style="gap: 3rem; overflow-x: hidden; justify-content: center; margin-top: 10%; margin-bottom: 10%">
+  
+  {% for item in movie_data %}
+  <div id="movie-card-{{ loop.index }}" class="card col p-15" style="width: 18rem;">
+    <div hx-get="/watch/{{ item["Path"] }}" hx-target="#response-div-watch" style="color: black; text-decoration: none; cursor: pointer;">
+      <img src="{{ item["Poster"] }}" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{ item["Title"] }}<div id="movie-data-{{ loop.index }}" style="display: none !important;">
+          {{ item | tojson }}</div>
+        </h5>
+        <p id="card-year-text-{{ loop.index }}" class="card-text" style="color: grey;">{{ item["Year"] }} </p>
+        <p id="card-text-{{ loop.index }}">
+          {% if item["Edition"] %}
+            {{ item["Edition"] | replace('"', "") | replace("'", "") | replace("[", "") | replace("]", "")}}
+          {% elif item["AlternativeTitle"] %}
+            {{ item["AlternativeTitle"] | replace("'", "") | replace('"', "") | replace("[", "") | replace("]", "")}}
+          {% endif %}
+        </p>
+        <p id="card-runtime-text-{{ loop.index }}"></p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  
+</div>
+
+<script>
+  getRuntime()
+  setTimeout(getRuntime, 1000)
+</script>
